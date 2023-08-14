@@ -1,0 +1,33 @@
+/* styles.css */
+button[data-title] {
+    position: relative;
+}
+
+button[data-title]::before {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 50%;
+    left: -220px;
+    /* Cambia esta propiedad para ajustar la posición */
+    transform: translateY(50%);
+    background-color: white;
+    color: gray;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: normal;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform-origin: bottom center;
+    z-index: 1;
+    width: 200px;
+    text-align: center;
+}
+
+button[data-title]:hover::before {
+    opacity: 1;
+    transform: translateY(50%) scale(1.05);
+}
